@@ -1,8 +1,3 @@
-# Propelio Backend Coding Excercise
-
-Build a Dockerized Node.js REST API for the included Open API spec (spec.yaml)
-using the data from the data.json file.
-
 ## Goal
 
 This API endpoint would be used for typeahead suggestions for US counties.
@@ -10,7 +5,7 @@ It should be able to return a set of matching counties based on a user
 provided fragment of a county name or state. See the examples in the
 provided Open API spec.
 
-## Requirements
+### Requirements
 
 * The command `docker-compose up` should launch the API, expose it on
   port 3000, and perform whatever initialization it needs.
@@ -21,7 +16,17 @@ provided Open API spec.
 * Feel free to use Typescript, it's what we use.
 * Don't forget to write some tests!
 
-## Submitting your work
-Compress your source code as a zip archive and either send it to us,
-or send us a link where we can download it. Sharing via Dropbox,
-Google Drive, or similar should be fine.
+### How to run locally
+1. Type and run this in your terminal `git clone https://github.com/edamor/tangerine-monkeys.git`
+2. Go into project directory with `cd tangerine-monkeys`
+3. Run with Node
+   a. In the terminal, run `npm install`
+   b. After downloading node_modules, run `npm run dev`
+4. Run with Docker
+   a. In the terminal, run `docker build -t coding-test .`
+   b. After build, run `docker-compose up`
+5. Server will start listening on Port:3000
+
+### Testing
+1. In the terminal, run `npm run test`
+2. Check test results
