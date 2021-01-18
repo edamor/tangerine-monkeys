@@ -10,6 +10,8 @@ app.get('/api/suggest', (req, res) => {
   
   try {
     const { q } = req.query;
+
+    // Only check the state field if query string length is less than or equal to 2
     if (q.length <= 2) {
       database.forEach(item => {
         if (response.length >= 5) {
@@ -19,6 +21,8 @@ app.get('/api/suggest', (req, res) => {
           response.push(item)
         }
       })
+
+      // If initial search found nothing, search query string in name field
       if (response.length === 0) {
         database.forEach(item => {
           if (response.length >= 5) {
@@ -29,6 +33,9 @@ app.get('/api/suggest', (req, res) => {
           }
         })
       }
+
+    // If query string length is greater than 2, then no need to search state field
+    // Will search name field instead
     } else {
       database.forEach(item => {
         if (response.length >= 5) {
